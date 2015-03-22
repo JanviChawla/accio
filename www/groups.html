@@ -13,7 +13,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 
-    <!-- HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -24,27 +28,38 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/map.js"></script>
-    
     <script type="text/javascript" charset="utf-8">
 
-      var a1 = ""
-      var a2 = ""
-      var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003"
-      var a4 = ""
-      var a5 = ""
-      var a6 = ""
-      var a7 = ""
-      var a8 = ""
-      var a9 = ""
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-      var megalist = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
 
-      var i = 0;
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + position.timestamp                    + '<br />';
+    }
 
-      window.setInterval(function() {
-          document.getElementById('map-img').src=megalist[i];
-          i++;
-        }, 5000);
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
 
     </script>
   </head>
@@ -72,18 +87,12 @@
       </div>
     </nav>
 
-
-    <div class="container-fluid home">
-      <!-- <p id="geolocation">Finding geolocation...</p> -->
-      <h1>Halloween Frop</h1>
-      <p id="startloc">Start location: North Avenue Apartments, Atlanta, GA</p>
-      <p id="timestamp">Last updated: </p>
-      <div id="map">
-        <img id="map-img" src="" />                                        <!-- INSERT A0 URL HERE!!!!!!!!!!!!!!!!!!!!!!!! -->
-      </div>
-      <p id="numbers">In this group: Janvi, Piya, Tina, Vicky</p>
-
-
+    <div class="container-fluid">
+        <h1>Groups</h1>
+        <div class="groups">
+            <a class="btn btn-primary btn-block" href="add.html" role="button">Create New Group</a>
+            <a class="btn btn-default btn-block" href="index.html" role="button">Halloween Frop</a>
+        </div>
     </div><!-- /container-fluid -->
 
 

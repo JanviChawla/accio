@@ -1,3 +1,30 @@
 body {
 	padding-top: 70px;
 }
+
+h1 {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.home {
+	text-align: center;
+}
+
+.add input {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.add a {
+	padding: 10px 0;
+	margin: 10px 0;
+}
+
+.groups a {
+	text-align: center;
+	padding: 10px 0;
+	margin: 10px 0;
+}

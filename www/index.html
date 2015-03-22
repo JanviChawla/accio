@@ -28,15 +28,15 @@
     
     <script type="text/javascript" charset="utf-8">
 
-      var a0 = "";
-      var a1 = "";
-      var a2 = "";
+      var a0 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=18&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.770201,-84.39105&markers=color:green%7Clabel:G%7C33.770011203,-84.39106&markers=color:red%7Clabel:C%7C33.7700120,%20-84.39138";
+      var a1 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.77577,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775854,-84.3927889749999&markers=color:red%7Clabel:C%7C33.775845,%20-84.39269899999";
+      var a2 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.77577,-84.392579999299&markers=color:green%7Clabel:G%7C33.775854,-84.3925589749999&markers=color:red%7Clabel:C%7C33.77582,%20-84.39269899999";
       var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003";
       var a4 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.775747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
       var a5 = "https://maps.googleapis.com/maps/api/staticmap?center=200+4th+Street+NW,Atlanta,GA&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.777747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775058,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
-      var a6 = "";
-      var a7 = "";
-      var a8 = "";
+      var a6 = "https://maps.googleapis.com/maps/api/staticmap?center=200+4th+Street+NW,Atlanta,GA&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.777747,-84.392999999999&markers=color:green%7Clabel:G%7C33.775058,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
+      var a7 = "https://maps.googleapis.com/maps/api/staticmap?center=200+4th+Street+NW,Atlanta,GA&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.777747,-84.395999999999&markers=color:green%7Clabel:G%7C33.775958,-84.39275898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3927989999999";
+      var a8 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=14&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.781884,-84.40402799899998&markers=color:green%7Clabel:G%7C33.776858,-84.39272898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3925689999999";
       var a9 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=14&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.781884,-84.40472799899998&markers=color:green%7Clabel:G%7C33.776858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
 
       var megalist = [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9];
@@ -57,48 +57,50 @@
           // }
         }, 1000);
 
-      function sendMessage() {
+      // function sendMessage() {
 
-        var name = ['Vicky', 'Tina', 'Piya', 'Janvi'];
-        var number = [6789392712, 6785755462, 7064903774, 7708763971];
-        for (i = 0; i < 4; i++) {
-          if (person == name[i]) {
-            var p = person;
-          }
-        }
-        var message = p + ' is out of range at ' + lat + ', ' + lon;
-        //var number = document.querySelector("#number").value;
-        //var message = document.querySelector("#message").value;
-        console.log("going to send "+message+" to "+name[0]+", "+name[1]+", "+name[2]+", "+name[3]);
+      //   var person
 
-        //simple validation for now
-        if(number === '' || message === '') return;
+      //   var name = ['Vicky', 'Tina', 'Piya', 'Janvi'];
+      //   var number = [6789392712, 6785755462, 7064903774, 7708763971];
+      //   for (i = 0; i < 4; i++) {
+      //     if (person == name[i]) {
+      //       var p = person;
+      //     }
+      //   }
+      //   var message = p + ' is out of range at ' + lat + ', ' + lon;
+      //   //var number = document.querySelector("#number").value;
+      //   //var message = document.querySelector("#message").value;
+      //   console.log("going to send "+message+" to "+name[0]+", "+name[1]+", "+name[2]+", "+name[3]);
 
-        for (i = 0; i < 4; i++) {
-          var msg = {
-            phoneNumber:number[i],
-            textMessage:message
-          };
+      //   //simple validation for now
+      //   if(number === '' || message === '') return;
 
-          sms.sendMessage(msg, function(message) {
-            console.log("success: " + message);
-            navigator.notification.alert(
-                'Message to ' + number + ' has been sent.',
-                null,
-                'Message Sent',
-                'Done'
-            );
+      //   for (i = 0; i < 4; i++) {
+      //     var msg = {
+      //       phoneNumber:number[i],
+      //       textMessage:message
+      //     };
 
-          }, function(error) {
-            console.log("error: " + error.code + " " + error.message);
-            navigator.notification.alert(
-              'Sorry, message not sent: ' + error.message,
-              null,
-              'Error',
-              'Done'
-            );
-          });
-        }
+      //     sms.sendMessage(msg, function(message) {
+      //       console.log("success: " + message);
+      //       navigator.notification.alert(
+      //           'Message to ' + number + ' has been sent.',
+      //           null,
+      //           'Message Sent',
+      //           'Done'
+      //       );
+
+      //     }, function(error) {
+      //       console.log("error: " + error.code + " " + error.message);
+      //       navigator.notification.alert(
+      //         'Sorry, message not sent: ' + error.message,
+      //         null,
+      //         'Error',
+      //         'Done'
+      //       );
+      //     });
+      //   }
 
 }
 

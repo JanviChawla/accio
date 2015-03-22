@@ -1,7 +1,5 @@
-document.addEventListener("deviceready", init, false);
-function init() {
+function sendMessage() {
 
-	document.querySelector("#sendMessage").addEventListener("touchend", function(person, lat, lon) {
 		console.log("click");
 		var name = ['Vicky', 'Tina', 'Piya', 'Janvi'];
 		var number = [6789392712, 6785755462, 7064903774, 7708763971];
@@ -43,7 +41,5 @@ function init() {
 				);
 			});
 		}
-
-	}, false);
 
 }

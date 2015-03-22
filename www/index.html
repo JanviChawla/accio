@@ -23,28 +23,39 @@
     <script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/sms.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/map.js"></script>
     
     <script type="text/javascript" charset="utf-8">
 
-      var a1 = ""
-      var a2 = ""
-      var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003"
-      var a4 = ""
-      var a5 = ""
-      var a6 = ""
-      var a7 = ""
-      var a8 = ""
-      var a9 = ""
+      var a0 = "";
+      var a1 = "";
+      var a2 = "";
+      var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003";
+      var a4 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.775747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
+      var a5 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.775747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775849,-84.39258799998999&markers=color:red%7Clabel:C%7C33.775843,%20-84.3925879999999";
+      var a6 = "";
+      var a7 = "";
+      var a8 = "";
+      var a9 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=14&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.781884,-84.40472799899998&markers=color:green%7Clabel:G%7C33.776858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
 
-      var megalist = [a1, a2, a3, a4, a5, a6, a7, a8, a9];
+      var megalist = [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9];
 
-      var i = 0;
+      var i = 1;
 
       window.setInterval(function() {
           document.getElementById('map-img').src=megalist[i];
+
+          if (i == 9) {
+            sendMessage();
+          }
+
           i++;
-        }, 5000);
+
+          // if (i == 10) {
+          //   i = 0;
+          // }
+        }, 1000);
 
     </script>
   </head>

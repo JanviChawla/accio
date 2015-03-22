@@ -31,7 +31,7 @@
       var a0 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=18&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.770201,-84.39105&markers=color:green%7Clabel:G%7C33.770011203,-84.39106&markers=color:red%7Clabel:C%7C33.7700120,%20-84.39138";
       var a1 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.77577,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775854,-84.3927889749999&markers=color:red%7Clabel:C%7C33.775845,%20-84.39269899999";
       var a2 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.77577,-84.392579999299&markers=color:green%7Clabel:G%7C33.775854,-84.3925589749999&markers=color:red%7Clabel:C%7C33.77582,%20-84.39269899999";
-      var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003";
+      // var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003";
       var a4 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.775747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
       var a5 = "https://maps.googleapis.com/maps/api/staticmap?center=200+4th+Street+NW,Atlanta,GA&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.777747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775058,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
       var a6 = "https://maps.googleapis.com/maps/api/staticmap?center=200+4th+Street+NW,Atlanta,GA&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.777747,-84.392999999999&markers=color:green%7Clabel:G%7C33.775058,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
@@ -39,23 +39,36 @@
       var a8 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=14&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.781884,-84.40402799899998&markers=color:green%7Clabel:G%7C33.776858,-84.39272898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3925689999999";
       var a9 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=14&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.781884,-84.40472799899998&markers=color:green%7Clabel:G%7C33.776858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
 
-      var megalist = [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9];
+      var megalist = [a0, a1, a2, a4, a5, a6, a7, a8, a9];
+
+      var times = ["10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:30", "12:45"];
 
       var i = 1;
 
       window.setInterval(function() {
+
+
+          
+
+
           document.getElementById('map-img').src=megalist[i];
 
-          if (i == 9) {
-            sendMessage();
+          document.getElementById('timestamp').innerHTML = times[i];
+
+          // if (i == 8) {
+          //   sendMessage();
+          // }
+
+          if (i == 8) {
+            alert("Janvi is out of range.");
           }
 
           i++;
 
-          // if (i == 10) {
-          //   i = 0;
-          // }
-        }, 1000);
+          if (i == 9) {
+            i = 0;
+          }
+        }, 2000);
 
       // function sendMessage() {
 
@@ -102,8 +115,6 @@
       //     });
       //   }
 
-}
-
     </script>
   </head>
   <body>
@@ -135,11 +146,11 @@
       <!-- <p id="geolocation">Finding geolocation...</p> -->
       <h1>Halloween Frop</h1>
       <p id="startloc">Start location: North Avenue Apartments, Atlanta, GA</p>
-      <p id="timestamp">Last updated: </p>
+      <p>Last updated: <span id="timestamp">10:30</span></p>
       <div id="map">
-        <img id="map-img" src="" />                                        <!-- INSERT A0 URL HERE!!!!!!!!!!!!!!!!!!!!!!!! -->
-      </div>
-      <p id="numbers">In this group: Janvi, Piya, Tina, Vicky</p>
+        <img id="map-img" src="https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=18&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.770201,-84.39105&markers=color:green%7Clabel:G%7C33.770011203,-84.39106&markers=color:red%7Clabel:C%7C33.7700120,%20-84.39138" />                                        <!-- INSERT A0 URL HERE!!!!!!!!!!!!!!!!!!!!!!!! -->
+      </div><br />
+      <p id="numbers">In this group: Piya, Tina, Vicky</p>
 
 
     </div><!-- /container-fluid -->

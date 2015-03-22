@@ -33,7 +33,7 @@
       var a2 = "";
       var a3 = "https://maps.googleapis.com/maps/api/staticmap?center=North+Avenue+Apartments,Atlanta,GA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.776598,-84.39390300000003&markers=color:green%7Clabel:G%7C33.776599,-84.39390230000003&markers=color:red%7Clabel:C%7C33.776595,-84.39390400000003";
       var a4 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.775747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775858,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
-      var a5 = "https://maps.googleapis.com/maps/api/staticmap?center=165+4th+Street+NW,Atlanta,GA&zoom=19&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.775747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775849,-84.39258799998999&markers=color:red%7Clabel:C%7C33.775843,%20-84.3925879999999";
+      var a5 = "https://maps.googleapis.com/maps/api/staticmap?center=200+4th+Street+NW,Atlanta,GA&zoom=16&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C33.777747,-84.3926799999999&markers=color:green%7Clabel:G%7C33.775058,-84.39278898999999&markers=color:red%7Clabel:C%7C33.775845,%20-84.3926989999999";
       var a6 = "";
       var a7 = "";
       var a8 = "";
@@ -56,6 +56,51 @@
           //   i = 0;
           // }
         }, 1000);
+
+      function sendMessage() {
+
+        var name = ['Vicky', 'Tina', 'Piya', 'Janvi'];
+        var number = [6789392712, 6785755462, 7064903774, 7708763971];
+        for (i = 0; i < 4; i++) {
+          if (person == name[i]) {
+            var p = person;
+          }
+        }
+        var message = p + ' is out of range at ' + lat + ', ' + lon;
+        //var number = document.querySelector("#number").value;
+        //var message = document.querySelector("#message").value;
+        console.log("going to send "+message+" to "+name[0]+", "+name[1]+", "+name[2]+", "+name[3]);
+
+        //simple validation for now
+        if(number === '' || message === '') return;
+
+        for (i = 0; i < 4; i++) {
+          var msg = {
+            phoneNumber:number[i],
+            textMessage:message
+          };
+
+          sms.sendMessage(msg, function(message) {
+            console.log("success: " + message);
+            navigator.notification.alert(
+                'Message to ' + number + ' has been sent.',
+                null,
+                'Message Sent',
+                'Done'
+            );
+
+          }, function(error) {
+            console.log("error: " + error.code + " " + error.message);
+            navigator.notification.alert(
+              'Sorry, message not sent: ' + error.message,
+              null,
+              'Error',
+              'Done'
+            );
+          });
+        }
+
+}
 
     </script>
   </head>

@@ -3,7 +3,7 @@ function sendMessage() {
 		console.log("click");
 		var name = ['Vicky', 'Tina', 'Piya', 'Janvi'];
 		var number = [6789392712, 6785755462, 7064903774, 7708763971];
-		for (i = 0, i < 4, i++) {
+		for (i = 0; i < 4; i++) {
 			if (person == name[i]) {
 				var p = person;
 			}
